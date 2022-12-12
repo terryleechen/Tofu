@@ -13,8 +13,11 @@ async def startup_event():
     MONGODB_URI = os.environ["MONGODB_URI"]
     client = MongoClient(MONGODB_URI)
     print("Connected to the MongoDB database!")
-    for db_info in client.list_database_names():
-        print(db_info)
+
+    print(client["inventory"].list_collection_names())
+    collections = client["cars"].list_collection_names()
+    for collection in collections:
+        print(collection)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
