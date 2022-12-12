@@ -1,0 +1,9 @@
+CarID,Manufacturer,Model,FuelType,Color,LicencePlate,Status,Mileage
+CR00001,Honda,Civic,Regular,Blue,ABC-1234,1,1000
+CR00002,Toyota,Yaris,Regular,Green,,,
+CR00003,Nissan,Rogue,Regular,Red,,,
+CR00004,Audi,A8,Regular,White,,,
+CR00005,Chevrolet,Spark,Regular,Blue,,,
+CR00006,Volkswagen,Jetta,Regular,Green,,,
+CR00007,Mazda,3,Regular,Red,,,
+CR00008,Subaru,Foster,Regular,White,,,
