@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="bg-black ">
           <IconButton
             size="large"
             edge="start"
@@ -22,9 +22,9 @@ function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            IDK
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">ADMIN</Button>
         </Toolbar>
       </AppBar>
     </Box>

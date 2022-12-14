@@ -24,3 +24,5 @@ Installations:
 - npm install @mui/material @emotion/react @emotion/styled
 - npm install @mui/icons-material
 - npm install react-router-dom
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init -p
