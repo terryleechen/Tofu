@@ -1,0 +1,2 @@
+EmployeeID,FirstName,LastName,BranchID,Email,DOB,Address,Province,City,PostalCode,HireDate,Supervisor
+E0000000001,T,Dog,B001,t.dog@company.ca,11/14/1992,23 English Way,AB,St. Albert,T8N 7G6,1/1/2021,True

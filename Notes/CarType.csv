@@ -1,0 +1,5 @@
+TypeID,Description,DailyCost,WeeklyCost,MonthlyCost,LateFee,ChangeBranchFee
+T1,Economy,30.00,189.00,765.00,30.00,30.00
+T2,Compact,35.00,220.50,892.50,35.00,30.00
+T3,Standard,60.00,378.00,1530.00,60.00,30.00
+T4,Luxury,100.00,630.00,2550.00,100.00,50.00
