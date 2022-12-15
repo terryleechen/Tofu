@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 
 class Car(BaseModel):
     CarID: str = Field(...)
+    BranchID: str = Field(...)
     Make: str = Field(...)
     Model: str = Field(...)
     Year: int = Field(...)
@@ -22,6 +23,7 @@ class Car(BaseModel):
         schema_extra = {
             "example": {
                 "CarID": "CR00001",
+                "BranchID": "B001",
                 "Make": "Toyota",
                 "Model": "Camry",
                 "Year": 2010,

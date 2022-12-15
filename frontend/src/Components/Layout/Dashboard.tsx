@@ -11,7 +11,7 @@ const navigation = [
   { name: "Return", href: "#123", current: false },
   { name: "Employees", href: "/admin/employees", current: false },
   { name: "Customers", href: "/admin/customers/", current: false },
-  { name: "Branch", href: "/admin/customers/", current: false },
+  { name: "Cars", href: "/admin/cars/", current: false },
   { name: "Statistics", href: "#1236", current: false },
 ];
 
@@ -25,7 +25,9 @@ function Dashboard() {
               <div className="flex h-16 items-center justify-between">
                 <div className="flex items-center">
                   {/** logo */}
-                  {/* <img src="car.png" width="40" height="40" alt="" /> */}
+                  <div className="flex flex-shrink-0 items-center">
+                    <img className="w-15 h-12" src={require("./car.png")} />
+                  </div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item) => (

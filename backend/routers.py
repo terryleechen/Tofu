@@ -15,9 +15,12 @@ Cars API
   
 """
 @router.get("/cars", response_description="List all cars", response_model=List[Car])
-async def get_cars(branch_id: str, request: Request):
-    cars = list(request.app.db["cars"].find({"BranchID": branch_id}))
-    return cars
+async def get_cars(branch_id: str, supervisor: bool, request: Request):
+    if(supervisor):
+        cars = list(request.app.db["cars"].find({"BranchID": branch_id}))
+        return cars
+    else:
+        raise HTTPException(status_code=404, detail=f"A supervisor is required to available cars")
 
 @router.get("/cars/{id}", response_description="Get a single car", response_model=Car)
 async def get_car(CarID: str, request: Request):
