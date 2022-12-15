@@ -1,8 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import MainView from "./Components/Layout/MainView";
-import AdminDashBoard from "./Components/Admin/AdminDashboard";
-import AddEmployee from "./Components/Admin/Employee/AddEmployee";
-import ListEmployees from "./Components/Admin/Employee/ListEmployees";
+
+import ListEmployees from "./Components/Admin/ListEmployees";
 import Dashboard from "./Components/Layout/Dashboard";
 function Router() {
   return (
@@ -10,7 +8,7 @@ function Router() {
       <Routes>
         <Route path="/admin" element={<Dashboard />}>
           {/* <Route path="/admin" element={<Dashboard />} /> */}
-          <Route path="/admin/add" element={<AddEmployee />} />
+
           <Route path="/admin/employees" element={<ListEmployees />} />
         </Route>
       </Routes>

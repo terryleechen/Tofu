@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import ListEmployee from "../Admin/Employee/ListEmployees";
+import ListEmployee from "../Admin/ListEmployees";
 import { Outlet } from "react-router-dom";
 
 function classNames(...classes: any) {

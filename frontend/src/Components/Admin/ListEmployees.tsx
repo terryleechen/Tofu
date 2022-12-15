@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { EMPLOYEES_API } from "../../../API_URI";
+import { EMPLOYEES_API } from "../../API_URI";
 
 type Employee = {
   BranchID: string;
