@@ -11,6 +11,13 @@ function AdminDashBoard() {
       >
         Add
       </Button>
+      <Button
+        variant="contained"
+        component={Link}
+        to={{ pathname: "/admin/list" }}
+      >
+        List
+      </Button>
     </div>
   );
 }
