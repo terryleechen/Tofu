@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { EMPLOYEES_API, EMPLOYEE_ID_API } from "../../API_URI";
+import { EMPLOYEES_API, EMPLOYEE_ID_API } from "../../../API_URI";
 
 type Employee = {
   BranchID: string;
@@ -65,6 +65,13 @@ function ListEmployee({ setEmployee }: { setEmployee: any }) {
             <tr>
               <th
                 scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Employee ID
+              </th>
+
+              <th
+                scope="col"
                 className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
               >
                 First Name
@@ -81,12 +88,7 @@ function ListEmployee({ setEmployee }: { setEmployee: any }) {
               >
                 Email
               </th>
-              <th
-                scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-              >
-                Role
-              </th>
+
               <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
                 <span className="sr-only">Edit</span>
               </th>
@@ -97,6 +99,9 @@ function ListEmployee({ setEmployee }: { setEmployee: any }) {
             {/** this employees */}
             {employees.map((employee) => (
               <tr key={employee.EmployeeID}>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {employee.EmployeeID}
+                </td>
                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
                   {employee.FirstName}
                 </td>
@@ -106,11 +111,9 @@ function ListEmployee({ setEmployee }: { setEmployee: any }) {
                 <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                   {employee.Email}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                  {employee.BranchID}
-                </td>
+
                 <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                  {/** edit button */}
+                  {/** EDIT HREF */}
                   <a
                     // this makes edit text clickable
                     href="/admin/employees/edit"

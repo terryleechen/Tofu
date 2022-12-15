@@ -1,9 +1,9 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
-import EditEmployee from "./Components/Admin/EditEmployee";
+import EditEmployee from "./Components/Admin/Employees/EditEmployee";
 
-import ListEmployees from "./Components/Admin/ListEmployees";
+import ListEmployees from "./Components/Admin/Employees/ListEmployees";
 import Dashboard from "./Components/Layout/Dashboard";
 
 type Employee = {

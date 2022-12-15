@@ -1,16 +1,17 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { Outlet } from "react-router-dom";
 
-import EditEmployee from "../Admin/EditEmployee";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
 const navigation = [
   { name: "Admin", href: "/admin", current: true },
+  { name: "Booking", href: "#124", current: false },
   { name: "Return", href: "#123", current: false },
   { name: "Employees", href: "/admin/employees", current: false },
+  { name: "Customers", href: "#1239", current: false },
+  { name: "Statistics", href: "#1236", current: false },
 ];
 
 function Dashboard() {

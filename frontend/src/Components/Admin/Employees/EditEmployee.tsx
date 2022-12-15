@@ -1,6 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { CheckIcon } from "@heroicons/react/24/outline";
 
 type Employee = {
   BranchID: string;
@@ -22,12 +21,14 @@ function EditEmployee({ employee }: { employee: Employee }) {
   const [tempEmployee, setTempEmployee] = useState<Employee>(employee);
 
   useEffect(() => {
+    console.log(employee);
     setTempEmployee(employee);
   }, [employee]);
 
   {
     /* START ON CHANGE SECTION */
   }
+
   const handleFirstNameChange = (e: any) => {
     console.log(e.target.value);
     setTempEmployee({ ...tempEmployee, FirstName: e.target.value });
@@ -144,6 +145,74 @@ function EditEmployee({ employee }: { employee: Employee }) {
                           className="block w-full rounded-md border-gray-300 shadow- focus:border-indigo-500 focus:ring-indigo-500 text-xl"
                         />
                       </div>
+                    </div>
+
+                    {/* ADDRESS*/}
+                    <div className="col-span-6">
+                      <label
+                        htmlFor="street-address"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        address
+                      </label>
+                      <input
+                        type="text"
+                        name="street-address"
+                        id="street-address"
+                        autoComplete="street-address"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      />
+                    </div>
+
+                    {/* CITY */}
+                    <div className="col-span-6 sm:col-span-6 lg:col-span-2">
+                      <label
+                        htmlFor="city"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        City
+                      </label>
+                      <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        autoComplete="address-level2"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      />
+                    </div>
+
+                    {/* PROVINCE */}
+                    <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                      <label
+                        htmlFor="region"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Province
+                      </label>
+                      <input
+                        type="text"
+                        name="region"
+                        id="region"
+                        autoComplete="address-level1"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      />
+                    </div>
+
+                    {/* POSTAL CODE */}
+                    <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                      <label
+                        htmlFor="postal-code"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Postal code
+                      </label>
+                      <input
+                        type="text"
+                        name="postal-code"
+                        id="postal-code"
+                        autoComplete="postal-code"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      />
                     </div>
                   </div>
                 </div>
