@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-import EditEmployee from "./Components/Admin/Employees/EditEmployee";
-
-import ListEmployees from "./Components/Admin/Employees/ListEmployees";
 import Dashboard from "./Components/Layout/Dashboard";
+import EditEmployee from "./Components/Admin/Employees/EditEmployee";
+import ListEmployees from "./Components/Admin/Employees/ListEmployees";
+
+import LookupCustomers from "./Components/Admin/Customers/LookupCustomers";
 
 type Employee = {
   BranchID: string;
@@ -33,13 +34,11 @@ function Router() {
             element={<ListEmployees setEmployee={setEmployee} />}
           />
 
-          {employee && (
-            <Route
-              path="/admin/employees/edit"
-              element={<EditEmployee employee={employee} />}
-            />
-          )}
-
+          <Route
+            path="/admin/employees/edit"
+            element={<EditEmployee employee={employee} />}
+          />
+          <Route path="/admin/customers/" element={<LookupCustomers />} />
           {/* <Route path="/admin" element={<Dashboard />} /> */}
         </Route>
       </Routes>
