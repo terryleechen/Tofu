@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { EMPLOYEES_API } from "../../API_URI";
+import { useNavigate } from "react-router-dom";
+import { EMPLOYEES_API, EMPLOYEE_ID_API } from "../../API_URI";
 
 type Employee = {
   BranchID: string;
@@ -17,15 +18,26 @@ type Employee = {
   Supervisor: boolean;
 };
 
-function ListEmployee() {
+function ListEmployee({ setEmployee }: { setEmployee: any }) {
   const [employees, setEmployees] = useState<Employee[]>([] as Employee[]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(EMPLOYEES_API).then((res) => {
-      console.log(res.data);
       setEmployees(res.data);
     });
   }, []);
+
+  const handleClick = (event: any) => {
+    event.preventDefault();
+    //console.log(EMPLOYEE_ID_API + event.target.children[0].innerHTML);
+    axios
+      .get(EMPLOYEE_ID_API + event.target.children[0].innerHTML)
+      .then((res) => {
+        setEmployee(res.data);
+        navigate("/admin/employees/edit");
+      });
+  };
   return (
     <>
       <div className="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
@@ -100,10 +112,12 @@ function ListEmployee() {
                 <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                   {/** edit button */}
                   <a
-                    href="#"
+                    // this makes edit text clickable
+                    href="/admin/employees/edit"
                     className="text-indigo-600 hover:text-indigo-900 text-xl"
+                    onClick={handleClick}
                   >
-                    Edit<span className="sr-only">, {employee.FirstName}</span>
+                    Edit<span className="sr-only">{employee.EmployeeID}</span>
                   </a>
                 </td>
               </tr>

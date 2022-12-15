@@ -32,7 +32,14 @@ async def get_carTypes(request: Request):
     carTypes = list(request.app.db["carType"].find())
     return carTypes
 
-@router.get("/employees", response_description="List all employees", response_model=List[Employee])
-async def get_employees(request: Request):
-    employees = list(request.app.db["employee"].find())
+@router.get("/employees/{branch_id}", response_description="List all employees", response_model=List[Employee])
+async def get_employees(branch_id: str, request: Request):
+    employees = list(request.app.db["employees"].find({"BranchID": branch_id, "Supervisor": False}))
     return employees
+
+@router.get("/employee/{id}", response_description="find an employee", response_model=Employee)
+async def get_employee(EmployeeID: str, request: Request):
+    if (employee := request.app.db["employees"].find_one({"EmployeeID": EmployeeID})) is not None:
+        return employee
+    
+    raise HTTPException(status_code=404, detail=f"Car {CarID} not found")

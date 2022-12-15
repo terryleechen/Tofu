@@ -1,15 +1,46 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+
+import EditEmployee from "./Components/Admin/EditEmployee";
 
 import ListEmployees from "./Components/Admin/ListEmployees";
 import Dashboard from "./Components/Layout/Dashboard";
+
+type Employee = {
+  BranchID: string;
+  FirstName: string;
+  LastName: string;
+  HireDate: string;
+  Address: string;
+  City: string;
+  DOB: string;
+  Email: string;
+  EmployeeID: string;
+  PostalCod: string;
+  Province: string;
+  Supervisor: boolean;
+};
+
 function Router() {
+  const [employee, setEmployee] = useState<Employee>({} as Employee);
+
   return (
     <div>
       <Routes>
         <Route path="/admin" element={<Dashboard />}>
-          {/* <Route path="/admin" element={<Dashboard />} /> */}
+          <Route
+            path="/admin/employees/"
+            element={<ListEmployees setEmployee={setEmployee} />}
+          />
 
-          <Route path="/admin/employees" element={<ListEmployees />} />
+          {employee && (
+            <Route
+              path="/admin/employees/edit"
+              element={<EditEmployee employee={employee} />}
+            />
+          )}
+
+          {/* <Route path="/admin" element={<Dashboard />} /> */}
         </Route>
       </Routes>
     </div>
