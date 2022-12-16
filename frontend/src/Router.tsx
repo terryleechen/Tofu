@@ -6,6 +6,7 @@ import EditEmployee from "./Components/Admin/Employees/EditEmployee";
 import ListEmployees from "./Components/Admin/Employees/ListEmployees";
 
 import LookupCustomers from "./Components/Admin/Customers/LookupCustomers";
+import LandingPage from "./Components/Layout/LandingPage";
 
 type Employee = {
   BranchID: string;
@@ -28,6 +29,7 @@ function Router() {
   return (
     <div>
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/admin" element={<Dashboard />}>
           <Route
             path="/admin/employees/"
