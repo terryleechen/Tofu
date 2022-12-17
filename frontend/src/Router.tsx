@@ -6,7 +6,10 @@ import EditEmployee from "./Components/Admin/Employees/EditEmployee";
 import ListEmployees from "./Components/Admin/Employees/ListEmployees";
 
 import LookupCustomers from "./Components/Admin/Customers/LookupCustomers";
+import NewCustomer from "./Components/Layout/NewCustomer";
 import LandingPage from "./Components/Layout/LandingPage";
+
+import StartRevservation from "./Components/Admin/Reservations/StartReversation";
 
 type Employee = {
   BranchID: string;
@@ -41,7 +44,8 @@ function Router() {
             element={<EditEmployee employee={employee} />}
           />
           <Route path="/admin/customers/" element={<LookupCustomers />} />
-          {/* <Route path="/admin" element={<Dashboard />} /> */}
+          <Route path="/admin/reservations/" element={<StartRevservation />} />
+          <Route path="/admin/customers/new" element={<NewCustomer />} />
         </Route>
       </Routes>
     </div>

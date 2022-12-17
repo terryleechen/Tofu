@@ -7,7 +7,7 @@ function classNames(...classes: any) {
 
 const navigation = [
   { name: "Admin", href: "/admin", current: true },
-  { name: "Reservations", href: "#124", current: false },
+  { name: "Reservations", href: "/admin/reservations", current: false },
   { name: "Return", href: "#123", current: false },
   { name: "Employees", href: "/admin/employees", current: false },
   { name: "Customers", href: "/admin/customers/", current: false },
