@@ -10,10 +10,21 @@ const navigation = [
   { name: "About", href: "#", current: false },
 ];
 
+const footerNavigation = {
+  main: [
+    { name: "About", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Jobs", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Accessibility", href: "#" },
+    { name: "Partners", href: "#" },
+  ],
+};
+
 function LandingPage() {
   return (
-    // NavBar
     <div className="min-h-full">
+      {/* Nav Bar */}
       <div className="relative">
         <div className="pt-2 mx-auto max-w-full sm:px-6 lg:px-3">
           <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
@@ -59,10 +70,12 @@ function LandingPage() {
         </div>
       </div>
 
+      {/* Hero section */}
       <div className="relative">
         <div className="pt-4 mx-auto max-w-full sm:px-6 lg:px-3">
           <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-            <div className="absolute inset-0">
+            {/* Hero section wait to add from to for color */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-indigo-700 ">
               <img
                 className="h-full w-full object-cover"
                 src={require("./adventure.jpg")}
@@ -70,6 +83,7 @@ function LandingPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-r" />
             </div>
+
             <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
               <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 <span className="block text-neutral-900">
@@ -82,7 +96,7 @@ function LandingPage() {
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat aliqua.
               </p> */}
-              <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+              <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center ">
                 <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                   <a
                     href="#"
@@ -147,6 +161,44 @@ function LandingPage() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* bottom middle */}
+      <div className="relative">
+        <div className="pt-4 mx-auto max-w-full sm:px-6 lg:px-3 ">
+          <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl h-96 bg-gradient-to-r from-gray-800 to-indigo-700">
+            ??
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="relative">
+        <div className="pt-2 mx-auto max-w-full sm:px-6 lg:px-3">
+          <div className="mt-24 bg-gray-900 sm:mt-12 sm:rounded-2xl ">
+            <div className="mx-auto max-w-md overflow-hidden py-12 px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+              <nav
+                className="-mx-5 -my-2 flex flex-wrap justify-center"
+                aria-label="Footer"
+              >
+                {footerNavigation.main.map((item) => (
+                  <div key={item.name} className="px-5 py-2">
+                    <a
+                      href={item.href}
+                      className="text-base text-gray-400 hover:text-gray-300"
+                    >
+                      {item.name}
+                    </a>
+                  </div>
+                ))}
+              </nav>
+            </div>
+
+            <p className="mt-8 text-center text-base text-gray-400">
+              &copy; 2020 Tofu Rental, Inc. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
